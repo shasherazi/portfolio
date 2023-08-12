@@ -1,7 +1,12 @@
 import './App.css'
 import globalPlaylistScreenshot from './assets/screenshots/globalPlaylist.png'
+import laptopChannelScreenshot from './assets/screenshots/laptopChannel.png'
+import blogScreenshot from './assets/screenshots/blog.png'
+import countriesIndexScreenshot from './assets/screenshots/countriesIndex.png'
 import { FaPython, FaReact } from 'react-icons/fa'
-import { SiFirebase, SiTypescript } from 'react-icons/si'
+import { SiFirebase, SiJavascript, SiRuby, SiRubyonrails, SiTypescript } from 'react-icons/si'
+import { BiLogoPostgresql } from 'react-icons/bi'
+import { AiFillApi } from 'react-icons/ai'
 import { Project } from './components/Project'
 
 const App = () => {
@@ -29,6 +34,42 @@ const App = () => {
             techUsed={[FaReact, SiTypescript, FaPython, SiFirebase]}
             liveLink='https://global-playlist.vercel.app/'
             githubLink='https://github.com/shasherazi/globalPlaylist'
+          />
+
+          <Project
+            title='Laptop Channel'
+            description='Streamlined convenience at your fingertips!
+            Our platform empowers customers to reserve laptops in their preferred city
+            and quantity easily. Experience hassle-free access to the technology you need,
+            exactly when and where you need it.'
+            image={laptopChannelScreenshot}
+            imageAlt='Laptop Channel'
+            techUsed={[FaReact, SiRubyonrails, SiRuby, BiLogoPostgresql]}
+            liveLink='https://laptop-ecommerce.onrender.com/'
+            githubLink='https://github.com/shasherazi/laptops-ecommerce'
+          />
+
+          <Project
+            title='Blog'
+            description='Blog is a personal blog app which supports posts, comments, and likes. Built with Rails.'
+            image={blogScreenshot}
+            imageAlt='Blog'
+            techUsed={[SiRubyonrails, SiRuby, BiLogoPostgresql]}
+            liveLink={undefined}
+            githubLink='https://github.com/shasherazi/blog'
+          />
+
+          <Project
+            title='Countries Index'
+            description="Countries Index is a web application that allows users to search
+            for countries and get information about them. The information includes the
+            country's name, capital, population, area, and flag and list of time zones.
+            You can also filter the countries by continent."
+            image={countriesIndexScreenshot}
+            imageAlt='Countries Index'
+            techUsed={[FaReact, SiJavascript, AiFillApi]}
+            liveLink='https://shasherazi.github.io/countriesIndex/'
+            githubLink='https://github.com/shasherazi/countriesIndex'
           />
         </div>
       </div>
