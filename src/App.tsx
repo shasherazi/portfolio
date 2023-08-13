@@ -8,8 +8,19 @@ import { SiFirebase, SiJavascript, SiRuby, SiRubyonrails, SiTypescript } from 'r
 import { BiLogoPostgresql } from 'react-icons/bi'
 import { AiFillApi } from 'react-icons/ai'
 import { Project } from './components/Project'
+import { skills } from './assets/skills'
 
 const App = () => {
+
+  const shuffle = (array: string[]) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  shuffle(skills)
+
   return (
     <div className='app flex flex-col py-4 px-3'>
       <div className='intro mb-5'>
@@ -22,7 +33,7 @@ const App = () => {
         </p>
       </div>
 
-      <div className='project'>
+      <div className='projects'>
         <h2 className='font-bold text-2xl mb-2'>Projects</h2>
         <div className='project-list'>
           <Project
@@ -74,6 +85,62 @@ const App = () => {
             githubLink='https://github.com/shasherazi/countriesIndex'
           />
         </div>
+      </div>
+      <div className='skills mb-20'>
+        <h2 className='font-bold text-2xl mb-2'>Skills</h2>
+        <p className='mb-2'> Here are some of the skills I have acquired over the years in no particular order:</p>
+        <div className='skills-list flex flex-wrap gap-1'>
+          {skills.map((skill, index) => (
+            <span key={index} className='skill bg-black text-white p-2'>
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className='contact'>
+        <h2 className='font-bold text-2xl mb-2'>Contact</h2>
+        <ul className='contact-list'>
+          <li className='contact-item'>
+            <a
+              href='mailto:hassanrandomz@gmail.com'
+              className='contact-link underline font-bold'
+              target='_blank'
+              rel='noreferrer'
+            >
+              hassanrandomz@gmail.com
+            </a> on email
+          </li>
+          <li className='contact-item'>
+            <a
+              href='https://github.com/shasherazi/'
+              className='contact-link underline font-bold'
+              target='_blank'
+              rel='noreferrer'
+            >
+              shasherazi
+            </a> on GitHub
+          </li>
+          <li className='contact-item'>
+            <a
+              href='https://www.linkedin.com/in/shasherazi/'
+              className='contact-link underline font-bold'
+              target='_blank'
+              rel='noreferrer'
+            >
+              shasherazi
+            </a> on LinkedIn
+          </li>
+          <li className='contact-item'>
+            <a
+              href='https://twitter.com/shasherazi'
+              className='contact-link underline font-bold'
+              target='_blank'
+              rel='noreferrer'
+            >
+              shasherazi
+            </a> on Twitter
+          </li>
+        </ul>
       </div>
     </div>
   )
