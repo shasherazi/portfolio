@@ -14,3 +14,27 @@ body{
   font-family: 'Lato', sans-serif;
   color: #333;
 }
+
+@keyframes backgroundWipe{
+  from{
+    width: 0;
+  }
+  to{
+    width: calc(100% + 12px);
+  }
+}
+
+.intro-name{
+  width: calc(100vw - 12px);
+}
+
+.intro-name-bg{
+  animation: backgroundWipe 3s ease-in-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .intro-name-bg{
+    animation: none;
+    width: 100vw;
+  }
+}
