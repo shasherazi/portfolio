@@ -34,16 +34,16 @@ export const App = () => {
     <div className='app flex flex-col py-4 px-3 sm:px-24 md:px-7'>
       <div className='intro mb-5'>
         <div className='intro-name-bg bg-black h-full w-0 ml-[-12px] sm:ml-[-96px] md:ml-[-28px]'>
-          <h1 className='intro-name text-white relative mix-blend-difference font-bold text-3xl mb-2 p-3'>Syed Hassan Askri</h1>
+          <h1 className='intro-name text-white relative mix-blend-difference font-bold text-3xl mb-2 p-3 md:text-4xl'>Syed Hassan Askri</h1>
         </div>
-        <p className='bio leading-5 tracking-wide'>
+        <p className='bio leading-5 tracking-wide md:text-lg'>
           <strong>Full-stack developer</strong> experienced in JavaScript, React, Redux, Ruby on Rails, Linux, and chess.
           Open to new opportunities.
         </p>
       </div>
 
       <div className='projects'>
-        <h2 className='font-bold text-2xl mb-2'>Projects</h2>
+        <h2 className='font-bold text-2xl mb-2 md:text-3xl'>Projects</h2>
         <div className='project-list'>
           <Project
             title='Global Playlist'
@@ -96,9 +96,9 @@ export const App = () => {
         </div>
       </div>
       <div className='skills mb-20'>
-        <h2 className='font-bold text-2xl mb-2'>Skills</h2>
-        <p className='mb-2'> Here are some of the skills I have acquired over the years in no particular order:</p>
-        <div className='skills-list flex flex-wrap gap-1'>
+        <h2 className='font-bold text-2xl mb-2 md:text-3xl'>Skills</h2>
+        <p className='mb-2 md:text-lg'> Here are some of the skills I have acquired over the years in no particular order:</p>
+        <div className='skills-list flex flex-wrap gap-1 md:text-lg'>
           {skills.map((skill, index) => (
             <span key={index} className='skill bg-black text-white p-2'>
               {skill}
@@ -107,8 +107,8 @@ export const App = () => {
         </div>
       </div>
       <div className='contact mb-2'>
-        <h2 className='font-bold text-2xl mb-2'>Contact</h2>
-        <ul className='contact-list'>
+        <h2 className='font-bold text-2xl mb-2 md:text-3xl'>Contact</h2>
+        <ul className='contact-list md:text-lg'>
           <li className='contact-item'>
             <a
               href='mailto:hassanrandomz@gmail.com'
