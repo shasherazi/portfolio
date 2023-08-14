@@ -9,18 +9,8 @@ import { BiLogoPostgresql } from 'react-icons/bi'
 import { AiFillApi } from 'react-icons/ai'
 import { Project } from './components/Project'
 import { skills } from './assets/skills'
-import { useEffect } from 'react'
 
 export const App = () => {
-
-  useEffect(() => {
-    //  console log window width on resize
-    const handleResize = () => {
-      console.log(window.innerWidth)
-    }
-    window.addEventListener('resize', handleResize)
-  }, [])
-
   const shuffle = (array: string[]) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -31,9 +21,9 @@ export const App = () => {
   shuffle(skills)
 
   return (
-    <div className='app flex flex-col py-4 px-3 sm:px-24 md:px-7'>
+    <div className='app flex flex-col py-4 px-6 sm:px-24 md:px-7'>
       <div className='intro mb-5'>
-        <div className='intro-name-bg bg-black h-full w-0 ml-[-12px] sm:ml-[-96px] md:ml-[-28px]'>
+        <div className='intro-name-bg bg-black h-full w-0 ml-[-24px] sm:ml-[-96px] md:ml-[-28px]'>
           <h1 className='intro-name text-white relative mix-blend-difference font-bold text-3xl mb-2 p-3 md:text-4xl'>Syed Hassan Askri</h1>
         </div>
         <p className='bio leading-5 tracking-wide md:text-lg'>

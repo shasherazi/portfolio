@@ -19,7 +19,7 @@ body {
     width: 0;
   }
   to {
-    width: calc(100% + 24px);
+    width: calc(100% + 48px);
   }
 }
 
