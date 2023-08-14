@@ -9,8 +9,17 @@ import { BiLogoPostgresql } from 'react-icons/bi'
 import { AiFillApi } from 'react-icons/ai'
 import { Project } from './components/Project'
 import { skills } from './assets/skills'
+import { useEffect } from 'react'
 
-const App = () => {
+export const App = () => {
+
+  useEffect(() => {
+    //  console log window width on resize
+    const handleResize = () => {
+      console.log(window.innerWidth)
+    }
+    window.addEventListener('resize', handleResize)
+  }, [])
 
   const shuffle = (array: string[]) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -22,9 +31,9 @@ const App = () => {
   shuffle(skills)
 
   return (
-    <div className='app flex flex-col py-4 px-3'>
+    <div className='app flex flex-col py-4 px-3 sm:px-24'>
       <div className='intro mb-5'>
-        <div className='intro-name-bg bg-black h-full w-0'>
+        <div className='intro-name-bg bg-black h-full w-0 ml-[-12px] sm:ml-[-96px]'>
           <h1 className='intro-name text-white relative mix-blend-difference font-bold text-3xl mb-2 p-3'>Syed Hassan Askri</h1>
         </div>
         <p className='bio leading-5 tracking-wide'>
@@ -97,7 +106,7 @@ const App = () => {
           ))}
         </div>
       </div>
-      <div className='contact'>
+      <div className='contact mb-2'>
         <h2 className='font-bold text-2xl mb-2'>Contact</h2>
         <ul className='contact-list'>
           <li className='contact-item'>
@@ -145,5 +154,3 @@ const App = () => {
     </div>
   )
 }
-
-export default App

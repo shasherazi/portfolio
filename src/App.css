@@ -2,38 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
-  font-family: 'Lato', sans-serif;
+body {
+  background-color: #fff;
+  font-family: "Lato", sans-serif;
   color: #333;
 }
 
-@keyframes backgroundWipe{
-  from{
+@keyframes backgroundWipe {
+  from {
     width: 0;
   }
-  to{
-    width: calc(100% + 12px);
+  to {
+    width: calc(100% + 24px);
   }
 }
 
-.intro-name{
+.intro-name {
   width: calc(100vw - 12px);
 }
 
-.intro-name-bg{
+.intro-name-bg {
   animation: backgroundWipe 3s ease-in-out forwards;
 }
 
-@media (prefers-reduced-motion: reduce){
-  .intro-name-bg{
+@media (prefers-reduced-motion: reduce) {
+  .intro-name-bg {
     animation: none;
     width: 100vw;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  @keyframes backgroundWipe {
+    from {
+      width: 0;
+    }
+    to {
+      width: calc(100% + 192px);
+    }
   }
 }
