@@ -20,9 +20,9 @@ export const Project = ({
   githubLink,
 }: ProjectProps) => {
   return (
-    <div className='project-item mb-20'>
-      <img src={image} alt={imageAlt} />
-      <div className='project-item-description'>
+    <div className='project-item flex flex-col mb-20 md:flex-row'>
+      <img src={image} alt={imageAlt} className="min-w-0 h-full flex-1" />
+      <div className='project-item-description flex-1'>
         <h2 className='font-bold text-lg'>{title}</h2>
         <div className='tech-used flex items-center gap-1 mb-2'>
           <span className=''>Tech used: </span>

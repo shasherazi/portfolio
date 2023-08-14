@@ -31,9 +31,9 @@ export const App = () => {
   shuffle(skills)
 
   return (
-    <div className='app flex flex-col py-4 px-3 sm:px-24'>
+    <div className='app flex flex-col py-4 px-3 sm:px-24 md:px-7'>
       <div className='intro mb-5'>
-        <div className='intro-name-bg bg-black h-full w-0 ml-[-12px] sm:ml-[-96px]'>
+        <div className='intro-name-bg bg-black h-full w-0 ml-[-12px] sm:ml-[-96px] md:ml-[-28px]'>
           <h1 className='intro-name text-white relative mix-blend-difference font-bold text-3xl mb-2 p-3'>Syed Hassan Askri</h1>
         </div>
         <p className='bio leading-5 tracking-wide'>
