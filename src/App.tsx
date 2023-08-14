@@ -7,8 +7,10 @@ import { FaPython, FaReact } from 'react-icons/fa'
 import { SiFirebase, SiJavascript, SiRuby, SiRubyonrails, SiTypescript } from 'react-icons/si'
 import { BiLogoPostgresql } from 'react-icons/bi'
 import { AiFillApi } from 'react-icons/ai'
+import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import { Project } from './components/Project'
 import { skills } from './assets/skills'
+import { useState } from 'react'
 
 export const App = () => {
   const shuffle = (array: string[]) => {
@@ -18,13 +20,31 @@ export const App = () => {
     }
   }
 
+  const [darkMode, setDarkMode] = useState(false)
+
+  const handleDarkMode = () => {
+    document.body.classList.toggle('dark')
+    setDarkMode(!darkMode)
+  }
+
   shuffle(skills)
 
   return (
-    <div className='app flex flex-col py-4 px-6 sm:px-24 md:px-7'>
+    <div className={`app flex flex-col py-4 px-6 sm:px-24 md:px-7 ${darkMode ? 'dark' : ''}`}>
       <div className='intro mb-5'>
-        <div className='intro-name-bg bg-black h-full w-0 ml-[-24px] sm:ml-[-96px] md:ml-[-28px]'>
+        <div className='intro-name-bg bg-black dark:bg-white h-full w-0 ml-[-24px] sm:ml-[-96px] md:ml-[-28px]'>
           <h1 className='intro-name text-white relative mix-blend-difference font-bold text-3xl mb-2 p-3 md:text-4xl'>Syed Hassan Askri</h1>
+          <div
+            onClick={handleDarkMode}
+            className='dark-mode-toggle absolute right-2 cursor-pointer top-8 mix-blend-difference text-3xl md:text-4xl text-white'
+          >
+            {
+              darkMode ?
+                <MdLightMode />
+                :
+                <MdDarkMode />
+            }
+          </div>
         </div>
         <p className='bio leading-5 tracking-wide md:text-lg'>
           <strong>Full-stack developer</strong> experienced in JavaScript, React, Redux, Ruby on Rails, Linux, and chess.

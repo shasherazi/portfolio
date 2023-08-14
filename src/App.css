@@ -14,6 +14,11 @@ body {
   color: #333;
 }
 
+.dark {
+  background: #222;
+  color: #fff;
+}
+
 @keyframes backgroundWipe {
   from {
     width: 0;
