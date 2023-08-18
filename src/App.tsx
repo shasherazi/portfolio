@@ -33,7 +33,7 @@ export const App = () => {
     <div className={`app flex flex-col py-4 px-6 sm:px-24 md:px-7 ${darkMode ? 'dark' : ''}`}>
       <div className='intro mb-5'>
         <div className='intro-name-bg bg-black dark:bg-white h-full w-0 ml-[-24px] sm:ml-[-96px] md:ml-[-28px]'>
-          <h1 className='intro-name text-white relative mix-blend-difference font-bold text-3xl mb-2 p-3 md:text-4xl'>Syed Hassan Askri</h1>
+          <h1 className='intro-name text-white relative mix-blend-difference font-bold text-3xl mb-2 p-3 pr-8 md:text-4xl'>Syed Hassan Askri</h1>
           <div
             onClick={handleDarkMode}
             className='dark-mode-toggle absolute right-2 cursor-pointer top-8 mix-blend-difference text-3xl md:text-4xl text-white'
@@ -53,7 +53,7 @@ export const App = () => {
       </div>
 
       <div className='projects'>
-        <h2 className='font-bold text-2xl mb-2 md:text-3xl'>Projects</h2>
+        <h2 className='font-bold text-2xl mb-4 md:text-3xl'>Projects</h2>
         <div className='project-list'>
           <Project
             title='Global Playlist'
