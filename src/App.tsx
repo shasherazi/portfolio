@@ -30,9 +30,9 @@ export const App = () => {
   shuffle(skills)
 
   return (
-    <div className={`app flex flex-col py-4 px-6 sm:px-24 md:px-7 ${darkMode ? 'dark' : ''}`}>
-      <div className='intro mb-5'>
-        <div className='intro-name-bg bg-black dark:bg-white h-full w-0 ml-[-24px] sm:ml-[-96px] md:ml-[-28px]'>
+    <div className={`app flex flex-col py-4 px-6 sm:px-24 md:px-24 ${darkMode ? 'dark' : ''}`}>
+      <div className='intro mb-10'>
+        <div className='intro-name-bg bg-black dark:bg-white h-full w-0 ml-[-24px] sm:ml-[-96px] md:ml-[-96px]'>
           <h1 className='intro-name text-white relative mix-blend-difference font-bold text-3xl mb-2 p-3 pr-8 md:text-4xl'>Syed Hassan Askri</h1>
           <div
             onClick={handleDarkMode}
