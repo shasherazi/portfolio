@@ -17,9 +17,10 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { Project } from "./components/Project";
 import { skills } from "./assets/skills";
 import { useState } from "react";
-import { Analytics } from "@vercel/analytics/react";
+import { inject } from "@vercel/analytics";
 
 export const App = () => {
+  inject();
   const shuffle = (array: string[]) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -42,7 +43,6 @@ export const App = () => {
         darkMode ? "dark" : ""
       }`}
     >
-      <Analytics />
       <div className="intro mb-10">
         <div className="intro-name-bg bg-black dark:bg-white h-full w-0 ml-[-24px] sm:ml-[-96px] md:ml-[-96px]">
           <h1 className="intro-name text-white relative mix-blend-difference font-bold text-3xl mb-2 p-3 pr-8 md:text-4xl">
