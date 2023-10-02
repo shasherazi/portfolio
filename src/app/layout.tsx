@@ -28,7 +28,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/tux.png" />
       </head>
-      <body className={`${playfair.className} ${inter.className}`}>{children}</body>
+      <body className={`${playfair.variable} ${inter.variable}`}>{children}</body>
     </html>
   )
 }
