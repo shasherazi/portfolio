@@ -2,11 +2,11 @@ import { FiExternalLink } from "react-icons/fi";
 
 export default function Home() {
   return (
-    <main className="font-sans flex flex-col px-4">
+    <main className="font-sans flex flex-col px-4 home pb-10">
       <div className="header">
         <h2 className="text-3xl mt-10">heloo 👋</h2>
         <h1 className="font-serif text-4xl mt-5 ml-6">
-          I am <span className="italic">Syed Hassan Askri</span>, an{" "}
+          I am <span className="italic font-bold">shasherazi</span>, an{" "}
           <span className="text-[#3DA639]">open source</span> enthusiast{" "}
           interested in <span className="text-[#F79B33]">Linux</span>,{" "}
           <span className="text-[#5E97D0]">C</span>,{" "}
@@ -20,8 +20,30 @@ export default function Home() {
           .
         </h1>
       </div>
+      <div className="about mt-10">
+        <h2 className="font-serif text-4xl mt-10">about me</h2>
+        <p className="mt-5 ml-6 text-justify">
+          Growing up, I would always disassemble every one of my toys on the
+          first day I got them to understand what was happening under the hood.
+          Eventually, I realized I could experiment more on the software side
+          without any physical damage.
+          <br />
+          <br /> Fast forward to now, I have spent 1000+ hours building
+          full-stack projects using pair programming and collaborating with
+          developers worldwide. My hobbies have also evolved. I have automated
+          nearly all the boring tasks in my development workflow using scripts.
+          I disassemble software in my free time to find exploits and make them
+          secure.
+          <br />
+          <br />I have experience with Python, Nodejs, React & Redux,
+          TypeScript, and Ruby on Rails. I’m always learning new skills like
+          Django, C/C++, Rust, DevOps, ethical hacking, etc. If you&apos;re
+          interested in discussing a project, sharing ideas, or simply
+          connecting with a fellow enthusiast, feel free to reach out.
+        </p>
+      </div>
       <div className="contact mt-10">
-        <h2 className="font-serif text-4xl">contact</h2>
+        <h2 className="font-serif text-4xl mt-10">contact</h2>
         <ul className="text-2xl ml-6 leading-tight">
           <li className="mt-5">
             <a
