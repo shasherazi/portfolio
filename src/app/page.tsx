@@ -1,8 +1,19 @@
+import Image from "next/image";
 import { FiExternalLink } from "react-icons/fi";
+import skills from "../data/skills.json";
+
+type Skill = {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+};
+
+const skillsList: Skill[] = skills;
 
 export default function Home() {
   return (
-    <main className="font-sans flex flex-col px-4 home pb-10">
+    <main className="font-sans flex flex-col px-4 home pb-10 pr-6">
       <div className="header">
         <h2 className="text-3xl mt-10">heloo 👋</h2>
         <h1 className="font-serif text-4xl mt-5 ml-6">
@@ -20,6 +31,7 @@ export default function Home() {
           .
         </h1>
       </div>
+
       <div className="about mt-10">
         <h2 className="font-serif text-4xl mt-10">about me</h2>
         <p className="mt-5 ml-6 text-justify">
@@ -42,6 +54,24 @@ export default function Home() {
           connecting with a fellow enthusiast, feel free to reach out.
         </p>
       </div>
+
+      <div className="skills mt-10">
+        <h2 className="font-serif text-4xl mt-10">skills</h2>
+        <p>Here are some of my skills</p>
+        <ul className="text-2xl ml-6 flex flex-wrap gap-2">
+          {skillsList.map((skill, index) => (
+            <li key={index}>
+              <Image
+                src={skill.src}
+                width={skill.width}
+                height={skill.height}
+                alt={skill.alt}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
+
       <div className="contact mt-10">
         <h2 className="font-serif text-4xl mt-10">contact</h2>
         <ul className="text-2xl ml-6 leading-tight">
