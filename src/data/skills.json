@@ -1,81 +1,21 @@
 [
   {
-    "src": "https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white",
-    "width": 100,
-    "height": 28,
-    "alt": "nodejs"
-  },
-  {
-    "src": "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logocolor=%23f7df1e",
-    "width": 126,
-    "height": 28,
-    "alt": "javascript"
-  },
-  {
     "src": "https://img.shields.io/badge/typescript-%23007acc.svg?style=for-the-badge&logo=typescript&logocolor=white",
     "width": 126,
     "height": 28,
     "alt": "typescript"
   },
   {
-    "src": "https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54",
-    "width": 97,
+    "src": "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
+    "width": 86,
     "height": 28,
-    "alt": "python"
+    "alt": "react"
   },
   {
-    "src": "https://img.shields.io/badge/arch%20linux-1793d1?logo=arch-linux&logocolor=fff&style=for-the-badge",
-    "width": 126,
+    "src": "https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white",
+    "width": 88,
     "height": 28,
-    "alt": "archlinux"
-  },
-  {
-    "src": "https://img.shields.io/badge/Render-FE3B7.svg?style=for-the-badge&logo=render&logoColor=white",
-    "width": 97,
-    "height": 28,
-    "alt": "render"
-  },
-  {
-    "src": "https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white",
-    "width": 93,
-    "height": 28,
-    "alt": "vercel"
-  },
-  {
-    "src": "https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white",
-    "width": 144,
-    "height": 28,
-    "alt": "githubpages"
-  },
-  {
-    "src": "https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white",
-    "width": 97,
-    "height": 28,
-    "alt": "neovim"
-  },
-  {
-    "src": "https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white",
-    "width": 84,
-    "height": 28,
-    "alt": "rails"
-  },
-  {
-    "src": "https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white",
-    "width": 87,
-    "height": 28,
-    "alt": "figma"
-  },
-  {
-    "src": "https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white",
-    "width": 79,
-    "height": 28,
-    "alt": "ruby"
-  },
-  {
-    "src": "https://img.shields.io/badge/Gimp-657D8B?style=for-the-badge&logo=gimp&logoColor=FFFFFF",
-    "width": 79,
-    "height": 28,
-    "alt": "gimp"
+    "alt": "redux"
   },
   {
     "src": "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
@@ -84,16 +24,22 @@
     "alt": "nextjs"
   },
   {
-    "src": "https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens",
-    "width": 70,
+    "src": "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
+    "width": 138,
     "height": 28,
-    "alt": "jwt"
+    "alt": "tailwindcss"
   },
   {
-    "src": "https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white",
-    "width": 71,
+    "src": "https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white",
+    "width": 84,
     "height": 28,
-    "alt": "c++"
+    "alt": "rails"
+  },
+  {
+    "src": "https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54",
+    "width": 97,
+    "height": 28,
+    "alt": "python"
   },
   {
     "src": "https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white",
@@ -102,10 +48,16 @@
     "alt": "c"
   },
   {
-    "src": "https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white",
-    "width": 123,
+    "src": "https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white",
+    "width": 71,
     "height": 28,
-    "alt": "markdown"
+    "alt": "c++"
+  },
+  {
+    "src": "https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white",
+    "width": 100,
+    "height": 28,
+    "alt": "nodejs"
   },
   {
     "src": "https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB",
@@ -114,22 +66,46 @@
     "alt": "expressjs"
   },
   {
-    "src": "https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF.svg?style=for-the-badge&logo=Adobe%20Premiere%20Pro&logoColor=white",
-    "width": 193,
+    "src": "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logocolor=%23f7df1e",
+    "width": 126,
     "height": 28,
-    "alt": "adobepremierepro"
+    "alt": "javascript"
   },
   {
-    "src": "https://img.shields.io/badge/adobe%20photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=white",
-    "width": 175,
+    "src": "https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white",
+    "width": 79,
     "height": 28,
-    "alt": "adobephotoshop"
+    "alt": "ruby"
   },
   {
-    "src": "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
-    "width": 86,
+    "src": "https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white",
+    "width": 123,
     "height": 28,
-    "alt": "react"
+    "alt": "markdown"
+  },
+  {
+    "src": "https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white",
+    "width": 139,
+    "height": 28,
+    "alt": "shellscript"
+  },
+  {
+    "src": "https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens",
+    "width": 70,
+    "height": 28,
+    "alt": "jwt"
+  },
+  {
+    "src": "https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white",
+    "width": 93,
+    "height": 28,
+    "alt": "vercel"
+  },
+  {
+    "src": "https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white",
+    "width": 97,
+    "height": 28,
+    "alt": "neovim"
   },
   {
     "src": "https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white",
@@ -144,10 +120,10 @@
     "alt": "mongodb"
   },
   {
-    "src": "https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white",
-    "width": 160,
+    "src": "https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white",
+    "width": 95,
     "height": 28,
-    "alt": "githubactions"
+    "alt": "prisma"
   },
   {
     "src": "https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black",
@@ -156,27 +132,51 @@
     "alt": "linux"
   },
   {
-    "src": "https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white",
-    "width": 88,
+    "src": "https://img.shields.io/badge/arch%20linux-1793d1?logo=arch-linux&logocolor=fff&style=for-the-badge",
+    "width": 126,
     "height": 28,
-    "alt": "redux"
+    "alt": "archlinux"
   },
   {
-    "src": "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
-    "width": 138,
+    "src": "https://img.shields.io/badge/Gimp-657D8B?style=for-the-badge&logo=gimp&logoColor=FFFFFF",
+    "width": 79,
     "height": 28,
-    "alt": "tailwindcss"
+    "alt": "gimp"
   },
   {
-    "src": "https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white",
-    "width": 139,
+    "src": "https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF.svg?style=for-the-badge&logo=Adobe%20Premiere%20Pro&logoColor=white",
+    "width": 193,
     "height": 28,
-    "alt": "shellscript"
+    "alt": "adobepremierepro"
   },
   {
-    "src": "https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white",
-    "width": 95,
+    "src": "https://img.shields.io/badge/adobe%20photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=white",
+    "width": 175,
     "height": 28,
-    "alt": "prisma"
+    "alt": "adobephotoshop"
+  },
+  {
+    "src": "https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white",
+    "width": 87,
+    "height": 28,
+    "alt": "figma"
+  },
+  {
+    "src": "https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white",
+    "width": 160,
+    "height": 28,
+    "alt": "githubactions"
+  },
+  {
+    "src": "https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white",
+    "width": 144,
+    "height": 28,
+    "alt": "githubpages"
+  },
+  {
+    "src": "https://img.shields.io/badge/Render-FE3B7.svg?style=for-the-badge&logo=render&logoColor=white",
+    "width": 97,
+    "height": 28,
+    "alt": "render"
   }
 ]

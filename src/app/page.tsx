@@ -57,7 +57,9 @@ export default function Home() {
 
       <div className="skills mt-10">
         <h2 className="font-serif text-4xl mt-10">skills</h2>
-        <p>Here are some of my skills</p>
+        <p className="my-5">
+          Here are some of my skills in no particular order:
+        </p>
         <ul className="text-2xl ml-6 flex flex-wrap gap-2">
           {skillsList.map((skill, index) => (
             <li key={index}>
