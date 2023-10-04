@@ -17,18 +17,17 @@ export default function Home() {
       <div className="header">
         <h2 className="text-3xl mt-10">heloo 👋</h2>
         <h1 className="font-serif text-4xl mt-5 ml-6">
-          I am <span className="italic font-bold">shasherazi</span>, an{" "}
-          <span className="text-[#3DA639]">open source</span> enthusiast{" "}
+          I am <span className="italic font-bold">shasherazi</span>, a{" "}
+          <span className="underline decoration-wavy [text-decoration-skip-ink:none] decoration-[#FF3FA4] whitespace-nowrap">
+            web developer
+          </span>{" "}
+          and an <span className="text-[#3DA639]">open-source</span> enthusiast{" "}
           interested in <span className="text-[#F79B33]">Linux</span>,{" "}
           <span className="text-[#5E97D0]">C</span>,{" "}
           <span className="text-[#044F88]">C++</span>,{" "}
           <span className="text-[#3773A5]">Python</span>,{" "}
           <span className="text-[#b21e00]">Rust</span>, and{" "}
-          <span className="text-[#00FF00]">hacking</span>, and a{" "}
-          <span className="decoration-wavy underline underline-offset-8 decoration-[#FF3FA4] whitespace-nowrap">
-            web developer
-          </span>
-          .
+          <span className="text-[#00FF00]">hacking</span>.
         </h1>
       </div>
 
