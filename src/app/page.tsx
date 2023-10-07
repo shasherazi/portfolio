@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FiExternalLink } from "react-icons/fi";
 import skills from "../data/skills.json";
+import tux from "../assets/images/Tux_Classic_.svg";
 
 type Skill = {
   src: string;
@@ -13,10 +14,10 @@ const skillsList: Skill[] = skills;
 
 export default function Home() {
   return (
-    <main className="font-sans flex flex-col px-4 home pb-10 pr-6">
-      <div className="header">
+    <main className="font-sans flex flex-col px-4 md:px-10 lg:px-40 home pb-10 pr-6">
+      <div className="header relative">
         <h2 className="text-3xl mt-10">heloo 👋</h2>
-        <h1 className="font-serif text-4xl mt-5 ml-6">
+        <h1 className="font-serif text-4xl mt-5 ml-6 leading-[3rem]">
           I am <span className="italic font-bold">shasherazi</span>, a{" "}
           <span className="underline decoration-wavy [text-decoration-skip-ink:none] decoration-[#FF3FA4] whitespace-nowrap">
             web developer
@@ -29,6 +30,13 @@ export default function Home() {
           <span className="text-[#b21e00]">Rust</span>, and{" "}
           <span className="text-[#00FF00]">hacking</span>.
         </h1>
+        <div className="bg absolute right-0 h-1/2 bottom-[-15%] sm:h-4/5 sm:bottom-[-20%] lg:bottom-0 z-[-1] opacity-10">
+          <Image
+            src={tux}
+            alt="tux linux mascot"
+            className="object-contain inset-0 h-full w-full"
+          />
+        </div>
       </div>
 
       <div className="about mt-10">
@@ -74,7 +82,7 @@ export default function Home() {
       </div>
 
       <div className="contact mt-10">
-        <h2 className="font-serif text-4xl mt-10">contact</h2>
+        <h2 className="font-serif text-4xl mt-10">links</h2>
         <ul className="text-2xl ml-6 leading-tight">
           <li className="mt-5">
             <a
@@ -124,8 +132,24 @@ export default function Home() {
               </span>
             </a>
           </li>
+          <li>
+            <a
+              href="/blog"
+              className="inline-flex items-center gap-2 hover:underline"
+            >
+              Blog{" "}
+              <span className="text-black">
+                <FiExternalLink />
+              </span>
+            </a>
+          </li>
         </ul>
       </div>
+
+      <footer className="footer text-xs font-sans mt-10">
+        Tux penguin picture from lewing@isc.tamu.edu Larry Ewing and The GIMP,
+        Attribution, via Wikimedia Commons
+      </footer>
     </main>
   );
 }
