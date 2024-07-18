@@ -2,7 +2,7 @@
 import "./App.css";
 import { abrilFatface } from "./fonts";
 import { PiArrowUpRight } from "react-icons/pi";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 // import Image from "next/image";
 // import blender from "../public/blender.png";
 // import neovim from "../public/neovim.png";
@@ -13,6 +13,9 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState("intro");
+  const topBarRef = useRef<HTMLDivElement>(null);
+  const navBarListRef = useRef<HTMLUListElement>(null);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -31,21 +34,54 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   });
+
+  useEffect(() => {
+    const animateToCenter = () => {
+      const topBar = topBarRef.current;
+      if (!topBar) return;
+
+      const navBarList = navBarListRef.current;
+      if (!navBarList) return;
+
+      const activeElement = topBar.querySelector(".underline");
+      if (!activeElement) return;
+
+      const navBarListRect = navBarList.getBoundingClientRect();
+      const itemWidth = navBarListRect.width / 3;
+
+      const offset =
+        window.innerWidth / 2 -
+        itemWidth * (parseInt(activeElement.id) - 1) -
+        itemWidth / 2;
+
+      navBarList.style.left = `${offset}px`;
+    };
+
+    window.addEventListener("resize", animateToCenter);
+    animateToCenter();
+
+    return () => window.removeEventListener("resize", animateToCenter);
+  }, [currentSection]);
+
   return (
-    <main className="flex min-h-screen">
-      <div className="left-bar px-10 max-sm:p-0 text-3xl max-sm:text-2xl border-r border-[#393E46] sticky max-sm:fixed h-screen top-0 max-sm:bg-[#393E46]">
-        {" "}
+    <main className="flex flex-col min-h-screen">
+      <div
+        className="top-bar px-10 pt-5 text-3xl fixed max-sm:text-2xl"
+        ref={topBarRef}
+      >
         <ul
-          className={`flex flex-col h-full justify-center max-sm:mx-[-12px] gap-8 max-sm:justify-evenly ${abrilFatface.className} max-sm:[&>li]:rotate-90 max-sm:[&>li]:text-center`}
+          className={`flex absolute justify-evenly w-96 max-sm:mx-[-12px] max-sm:justify-evenly ${abrilFatface.className} transition-all duration-100 ease-in-out`}
+          ref={navBarListRef}
         >
           <li>
             <a
               href="#intro"
-              className={
+              className={`${
                 currentSection === "intro"
-                  ? "underline decoration-[#00ADB5] decoration-4"
-                  : ""
-              }
+                  ? "underline decoration-[#00ADB5] decoration-4 opacity-100"
+                  : "opacity-50 text-xl"
+              } transition-all duration-100 ease-in-out`}
+              id="1"
             >
               about
             </a>
@@ -56,11 +92,12 @@ export default function Home() {
           <li>
             <a
               href="#work"
-              className={
+              className={`${
                 currentSection === "work"
-                  ? "underline decoration-[#00ADB5] decoration-4"
-                  : ""
-              }
+                  ? "underline decoration-[#00ADB5] decoration-4 opacity-100"
+                  : "opacity-50 text-xl"
+              } transition-all duration-100 ease-in-out`}
+              id="2"
             >
               work
             </a>
@@ -68,18 +105,19 @@ export default function Home() {
           <li>
             <a
               href="#contact"
-              className={
+              className={`${
                 currentSection === "contact"
-                  ? "underline decoration-[#00ADB5] decoration-4"
-                  : ""
-              }
+                  ? "underline decoration-[#00ADB5] decoration-4 opacity-100"
+                  : "opacity-50 text-xl"
+              } transition-all duration-100 ease-in-out`}
+              id="3"
             >
               contact
             </a>
           </li>
         </ul>
       </div>
-      <div className="right-bar w-full [&>div]:pl-20 max-sm:[&>div]:pr-6 [&>div]:pr-[12%] max-sm:[&>div]:pl-0 max-sm:[&>div]:ml-20 [&>div]:pt-20 max-sm:[&>div]:pt-10 [&>div]:snap-start">
+      <div className="right-bar w-full [&>div]:pl-20 max-sm:[&>div]:pr-6 [&>div]:pr-[12%] max-sm:[&>div]:pl-0 max-sm:[&>div]:ml-10 [&>div]:pt-20 [&>div]:snap-start">
         <div className="intro h-screen" id="intro">
           <h1 className="text-3xl max-sm:text-2xl">
             hi, im <br />
@@ -100,7 +138,7 @@ export default function Home() {
               <a
                 href="https://www.uopeople.edu/"
                 target="_blank"
-                className="hover:bg-[#4D3660] hover:text-white px-1"
+                className="bg-[#4D3660] hover:text-white px-1"
               >
                 University of the People <PiArrowUpRight className="inline" />
               </a>
@@ -110,7 +148,7 @@ export default function Home() {
               <a
                 href="https://www.microverse.org/"
                 target="_blank"
-                className="hover:bg-[#743CFF] hover:text-white px-1"
+                className="bg-[#743CFF] hover:text-white px-1"
               >
                 microverse <PiArrowUpRight className="inline" />
               </a>
@@ -144,7 +182,7 @@ export default function Home() {
               <a
                 href="https://github.com/shasherazi"
                 target="_blank"
-                className="hover:bg-[#2B3137] hover:text-[#FAFBFC]"
+                className="bg-[#2B3137] text-[#FAFBFC]"
               >
                 github <PiArrowUpRight className="inline text-2xl" />
               </a>
@@ -153,7 +191,7 @@ export default function Home() {
               <a
                 href="https://www.linkedin.com/in/shasherazi"
                 target="_blank"
-                className="hover:bg-[#0876B3] hover:text-white"
+                className="bg-[#0876B3] text-white"
               >
                 linkedin <PiArrowUpRight className="inline text-2xl" />
               </a>
@@ -162,7 +200,7 @@ export default function Home() {
               <a
                 href="https://instagram.com/shasherazi"
                 target="_blank"
-                className="hover:bg-[#ffe299] hover:text-[#1d3ee2]"
+                className="bg-[#ffe299] text-[#1d3ee2]"
               >
                 instagram <PiArrowUpRight className="inline text-2xl" />
               </a>
@@ -171,7 +209,7 @@ export default function Home() {
               <a
                 href="mailto:hassanrandomz@gmail.com"
                 target="_blank"
-                className="hover:bg-[#C71610] hover:text-white"
+                className="bg-[#C71610] text-white"
               >
                 email <PiArrowUpRight className="inline text-2xl" />
               </a>
