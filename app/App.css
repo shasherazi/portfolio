@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #222831;
-  color: #eeeeee;
-}
-
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;

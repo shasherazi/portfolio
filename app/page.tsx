@@ -32,18 +32,17 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   });
   return (
-    <main className="flex min-h-screen">
-      <div className="left-bar px-10 max-sm:p-0 text-3xl max-sm:text-2xl border-r border-[#393E46] sticky max-sm:fixed h-screen top-0 max-sm:bg-[#393E46]">
-        {" "}
+    <main className="flex flex-col min-h-screen">
+      <div className="nav-bar text-2xl max-sm:text-xl sticky top-0 bg-red-900 py-4 pr-8">
         <ul
-          className={`flex flex-col h-full justify-center max-sm:mx-[-12px] gap-8 max-sm:justify-evenly ${abrilFatface.className} max-sm:[&>li]:rotate-90 max-sm:[&>li]:text-center`}
+          className={`flex justify-end gap-8 ${abrilFatface.className}`}
         >
           <li>
             <a
               href="#intro"
               className={
                 currentSection === "intro"
-                  ? "underline decoration-[#00ADB5] decoration-4"
+                  ? "underline decoration-accent decoration-4"
                   : ""
               }
             >
@@ -58,7 +57,7 @@ export default function Home() {
               href="#work"
               className={
                 currentSection === "work"
-                  ? "underline decoration-[#00ADB5] decoration-4"
+                  ? "underline decoration-accent decoration-4"
                   : ""
               }
             >
@@ -70,7 +69,7 @@ export default function Home() {
               href="#contact"
               className={
                 currentSection === "contact"
-                  ? "underline decoration-[#00ADB5] decoration-4"
+                  ? "underline decoration-accent decoration-4"
                   : ""
               }
             >
@@ -79,7 +78,7 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <div className="right-bar w-full [&>div]:pl-20 max-sm:[&>div]:pr-6 [&>div]:pr-[12%] max-sm:[&>div]:pl-0 max-sm:[&>div]:ml-20 [&>div]:pt-20 max-sm:[&>div]:pt-10 [&>div]:snap-start">
+      <div className="right-bar w-full [&>div]:pl-20 max-sm:[&>div]:pr-10 [&>div]:pr-[12%] max-sm:[&>div]:pl-10 [&>div]:pt-24 [&>div]:snap-start">
         <div className="intro h-screen" id="intro">
           <h1 className="text-3xl max-sm:text-2xl">
             hi, im <br />
