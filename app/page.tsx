@@ -13,36 +13,42 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState("intro");
+  const [previousSection, setPreviousSection] = useState("");
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const sections: NodeListOf<HTMLElement> =
+      const sections: NodeListOf<HTMLDivElement> =
         document.querySelectorAll("div[id]");
       sections.forEach((section) => {
         if (
           scrollPosition >= section.offsetTop - 100 &&
           scrollPosition < section.offsetTop + section.offsetHeight - 100
         ) {
-          setCurrentSection(section.id);
+          if (currentSection !== section.id) {
+            setPreviousSection(currentSection);
+            setCurrentSection(section.id);
+          }
         }
       });
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  });
+  }, [currentSection]);
+
   return (
     <main className="flex flex-col min-h-screen">
       <div className="nav-bar text-2xl max-sm:text-xl sticky top-0 bg-red-900 py-4 pr-8">
-        <ul
-          className={`flex justify-end gap-8 ${abrilFatface.className}`}
-        >
-          <li>
+        <ul className={`flex justify-end gap-8 ${abrilFatface.className}`}>
+          <li className="underline-animation">
             <a
               href="#intro"
               className={
                 currentSection === "intro"
-                  ? "underline decoration-accent decoration-4"
+                  ? "underline-in"
+                  : previousSection === "intro"
+                  ? "underline-out"
                   : ""
               }
             >
@@ -52,24 +58,28 @@ export default function Home() {
           {/* <li>
             <a href="#interests">interests</a>
           </li> */}
-          <li>
+          <li className="underline-animation">
             <a
               href="#work"
               className={
                 currentSection === "work"
-                  ? "underline decoration-accent decoration-4"
+                  ? "underline-in"
+                  : previousSection === "work"
+                  ? "underline-out"
                   : ""
               }
             >
               work
             </a>
           </li>
-          <li>
+          <li className="underline-animation">
             <a
               href="#contact"
               className={
                 currentSection === "contact"
-                  ? "underline decoration-accent decoration-4"
+                  ? "underline-in"
+                  : previousSection === "contact"
+                  ? "underline-out"
                   : ""
               }
             >
@@ -131,8 +141,14 @@ export default function Home() {
           </div>
         </div> */}
 
-        <div className="worK h-screen" id="work">
-          worK
+        <div
+          className="worK h-screen flex justify-center items-center"
+          id="work"
+        >
+          <p className="text-4xl font-bold relative bottom-14">
+            this part of the website is <br />
+            🚧under construction🚧
+          </p>
         </div>
 
         <div className="contact h-screen" id="contact">
