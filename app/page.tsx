@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col min-h-screen">
-      <div className="nav-bar text-2xl max-sm:text-xl sticky top-0 bg-red-900 py-4 pr-8">
+      <div className="nav-bar text-2xl max-sm:text-xl sticky top-0 bg-background py-4 pr-8">
         <ul className={`flex justify-end gap-8 ${abrilFatface.className}`}>
           <li className="underline-animation">
             <a
@@ -48,8 +48,8 @@ export default function Home() {
                 currentSection === "intro"
                   ? "underline-in"
                   : previousSection === "intro"
-                  ? "underline-out"
-                  : ""
+                    ? "underline-out"
+                    : ""
               }
             >
               about
@@ -65,8 +65,8 @@ export default function Home() {
                 currentSection === "work"
                   ? "underline-in"
                   : previousSection === "work"
-                  ? "underline-out"
-                  : ""
+                    ? "underline-out"
+                    : ""
               }
             >
               work
@@ -79,8 +79,8 @@ export default function Home() {
                 currentSection === "contact"
                   ? "underline-in"
                   : previousSection === "contact"
-                  ? "underline-out"
-                  : ""
+                    ? "underline-out"
+                    : ""
               }
             >
               contact
@@ -142,13 +142,18 @@ export default function Home() {
         </div> */}
 
         <div
-          className="worK h-screen flex justify-center items-center"
+          className="worK flex flex-nowrap w-full overflow-x-auto"
           id="work"
         >
-          <p className="text-4xl font-bold relative bottom-14">
-            this part of the website is <br />
-            🚧under construction🚧
-          </p>
+          <div className="h-screen flex flex-shrink-0 justify-center items-center text-4xl w-screen ml-[-5rem] my-[-2.5rem]">
+            work 1
+          </div>
+          <div className="h-screen flex flex-shrink-0 justify-center items-center text-4xl w-screen my-[-2.5rem] bg-accent">
+            work 2
+          </div>
+          <div className="h-screen flex flex-shrink-0 justify-center items-center text-4xl w-screen mr-[-12%] my-[-2.5rem]">
+            work 3
+          </div>
         </div>
 
         <div className="contact h-screen" id="contact">
