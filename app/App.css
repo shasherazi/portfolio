@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  height: 100%;
-  overflow: auto;
-}
-
-
 * {
   box-sizing: border-box;
 }

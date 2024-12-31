@@ -41,8 +41,8 @@ export default function Home() {
                 currentSection === "intro"
                   ? "underline-in"
                   : previousSection === "intro"
-                    ? "underline-out"
-                    : ""
+                  ? "underline-out"
+                  : ""
               }
             >
               about
@@ -55,8 +55,8 @@ export default function Home() {
                 currentSection === "work"
                   ? "underline-in"
                   : previousSection === "work"
-                    ? "underline-out"
-                    : ""
+                  ? "underline-out"
+                  : ""
               }
             >
               work
@@ -69,8 +69,8 @@ export default function Home() {
                 currentSection === "contact"
                   ? "underline-in"
                   : previousSection === "contact"
-                    ? "underline-out"
-                    : ""
+                  ? "underline-out"
+                  : ""
               }
             >
               contact
@@ -79,8 +79,11 @@ export default function Home() {
         </ul>
       </nav>
 
-      <div className="flex flex-col after-main snap-y snap-mandatory overflow-y-scroll">
-        <div className="intro h-screen px-20 max-sm:px-10 pt-24 snap-start snap-always" id="intro">
+      <div className="flex flex-col h-screen after-main snap-y snap-mandatory overflow-y-scroll">
+        <div
+          className="intro h-screen px-20 max-sm:px-10 pt-24 snap-start snap-always flex-shrink-0"
+          id="intro"
+        >
           <h1 className="text-3xl max-sm:text-2xl">
             hi, im <br />
             <span className="font-bold">Syed Hassan Askri</span>
@@ -131,7 +134,10 @@ export default function Home() {
           </div>
         </div> */}
 
-        <div className="h-screen snap-start snap-always" id="work">
+        <div
+          className="h-screen snap-start snap-always flex-shrink-0"
+          id="work"
+        >
           <div className="flex flex-nowrap w-full h-full overflow-x-auto snap-x snap-mandatory">
             <div className="flex-shrink-0 flex justify-center items-center text-4xl w-screen bg-red-400 snap-center">
               work 1
@@ -145,7 +151,10 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="contact h-screen px-20 max-sm:px-10 pt-24 snap-start snap-always" id="contact">
+        <div
+          className="contact h-screen px-20 max-sm:px-10 pt-24 snap-start snap-always flex-shrink-0"
+          id="contact"
+        >
           <h1 className="text-3xl max-sm:text-2xl">you can find me on</h1>
           <ul className="flex flex-col gap-4 pt-8 text-xl max-sm:text-base pl-4 [&_a]:p-1">
             <li>
