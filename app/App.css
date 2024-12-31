@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 html {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+  height: 100%;
+  overflow: auto;
+}
+
+
+* {
   box-sizing: border-box;
 }
 
@@ -12,6 +16,7 @@ html {
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
@@ -22,6 +27,7 @@ html {
     width: 100%;
     left: 0;
   }
+
   to {
     width: 0;
     left: 100%;

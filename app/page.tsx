@@ -3,13 +3,6 @@ import "./App.css";
 import { abrilFatface } from "./fonts";
 import { PiArrowUpRight } from "react-icons/pi";
 import { useState, useEffect } from "react";
-// import Image from "next/image";
-// import blender from "../public/blender.png";
-// import neovim from "../public/neovim.png";
-// import linux from "../public/linux.png";
-// import krita from "../public/krita.png";
-// import android from "../public/android.png";
-// import obsidian from "../public/obsidian.png";
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState("intro");
@@ -38,8 +31,8 @@ export default function Home() {
   }, [currentSection]);
 
   return (
-    <main className="flex flex-col min-h-screen">
-      <div className="nav-bar text-2xl max-sm:text-xl sticky top-0 bg-background py-4 pr-8">
+    <main className="relative min-h-screen overflow-x-hidden">
+      <nav className="fixed top-0 left-0 right-0 text-2xl max-sm:text-xl bg-background py-4 pr-8 z-50">
         <ul className={`flex justify-end gap-8 ${abrilFatface.className}`}>
           <li className="underline-animation">
             <a
@@ -55,9 +48,6 @@ export default function Home() {
               about
             </a>
           </li>
-          {/* <li>
-            <a href="#interests">interests</a>
-          </li> */}
           <li className="underline-animation">
             <a
               href="#work"
@@ -87,9 +77,10 @@ export default function Home() {
             </a>
           </li>
         </ul>
-      </div>
-      <div className="right-bar w-full [&>div]:pl-20 max-sm:[&>div]:pr-10 [&>div]:pr-[12%] max-sm:[&>div]:pl-10 [&>div]:pt-24 [&>div]:snap-start">
-        <div className="intro h-screen" id="intro">
+      </nav>
+
+      <div className="flex flex-col after-main snap-y snap-mandatory overflow-y-scroll">
+        <div className="intro h-screen px-20 max-sm:px-10 pt-24 snap-start snap-always" id="intro">
           <h1 className="text-3xl max-sm:text-2xl">
             hi, im <br />
             <span className="font-bold">Syed Hassan Askri</span>
@@ -101,7 +92,6 @@ export default function Home() {
             blender. i am also a linux user and love to work with tools like
             neovim, tmux, and zsh.
           </p>
-
           <p className="text-xl max-sm:text-base pt-8">
             im currently a <span className="font-bold">computer science</span>{" "}
             student at{" "}
@@ -141,24 +131,22 @@ export default function Home() {
           </div>
         </div> */}
 
-        <div
-          className="worK flex flex-nowrap w-full overflow-x-auto"
-          id="work"
-        >
-          <div className="h-screen flex flex-shrink-0 justify-center items-center text-4xl w-screen ml-[-5rem] my-[-2.5rem]">
-            work 1
-          </div>
-          <div className="h-screen flex flex-shrink-0 justify-center items-center text-4xl w-screen my-[-2.5rem] bg-accent">
-            work 2
-          </div>
-          <div className="h-screen flex flex-shrink-0 justify-center items-center text-4xl w-screen mr-[-12%] my-[-2.5rem]">
-            work 3
+        <div className="h-screen snap-start snap-always" id="work">
+          <div className="flex flex-nowrap w-full h-full overflow-x-auto snap-x snap-mandatory">
+            <div className="flex-shrink-0 flex justify-center items-center text-4xl w-screen bg-red-400 snap-center">
+              work 1
+            </div>
+            <div className="flex-shrink-0 flex justify-center items-center text-4xl w-screen bg-accent snap-center">
+              work 2
+            </div>
+            <div className="flex-shrink-0 flex justify-center items-center text-4xl w-screen snap-center">
+              work 3
+            </div>
           </div>
         </div>
 
-        <div className="contact h-screen" id="contact">
+        <div className="contact h-screen px-20 max-sm:px-10 pt-24 snap-start snap-always" id="contact">
           <h1 className="text-3xl max-sm:text-2xl">you can find me on</h1>
-
           <ul className="flex flex-col gap-4 pt-8 text-xl max-sm:text-base pl-4 [&_a]:p-1">
             <li>
               <a
