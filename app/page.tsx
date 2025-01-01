@@ -3,6 +3,8 @@ import "./App.css";
 import { abrilFatface } from "./fonts";
 import { PiArrowUpRight } from "react-icons/pi";
 import { useState, useEffect } from "react";
+import WorkSection from "./Work";
+import works from "./data/work"
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState("intro");
@@ -41,8 +43,8 @@ export default function Home() {
                 currentSection === "intro"
                   ? "underline-in"
                   : previousSection === "intro"
-                  ? "underline-out"
-                  : ""
+                    ? "underline-out"
+                    : ""
               }
             >
               about
@@ -55,8 +57,8 @@ export default function Home() {
                 currentSection === "work"
                   ? "underline-in"
                   : previousSection === "work"
-                  ? "underline-out"
-                  : ""
+                    ? "underline-out"
+                    : ""
               }
             >
               work
@@ -69,8 +71,8 @@ export default function Home() {
                 currentSection === "contact"
                   ? "underline-in"
                   : previousSection === "contact"
-                  ? "underline-out"
-                  : ""
+                    ? "underline-out"
+                    : ""
               }
             >
               contact
@@ -139,15 +141,51 @@ export default function Home() {
           id="work"
         >
           <div className="flex flex-nowrap w-full h-full overflow-x-auto snap-x snap-mandatory">
-            <div className="flex-shrink-0 flex justify-center items-center text-4xl w-screen bg-red-400 snap-center">
-              work 1
-            </div>
-            <div className="flex-shrink-0 flex justify-center items-center text-4xl w-screen bg-accent snap-center">
-              work 2
-            </div>
-            <div className="flex-shrink-0 flex justify-center items-center text-4xl w-screen snap-center">
-              work 3
-            </div>
+            {works.map((work) => (
+              <div
+                key={work.id}
+                className="relative flex-shrink-0 w-screen h-screen snap-center px-20 max-sm:px-10 pt-28"
+              >
+                <div className="h-full flex flex-col pb-24">
+                  <div className="mb-6">
+                    <h2 className="text-4xl font-bold mb-8">{work.name}</h2>
+                    <p className="text-xl max-w-xl">{work.description}</p>
+                  </div>
+                  <div className="tech flex gap-2">
+                    {work.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="text-sm border border-accent px-4 py-1 rounded-md"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-2 text-xl mt-6">
+                    {work.links.live && (
+                      <a
+                        href={work.links.live}
+                        target="_blank"
+                        className="hover:underline flex items-center gap-1 border border-current px-4 py-1 rounded-xl"
+                      >
+                        visit
+                        <PiArrowUpRight />
+                      </a>
+                    )}
+                    {work.links.github && (
+                      <a
+                        href={work.links.github}
+                        target="_blank"
+                        className="hover:underline flex items-center gap-1 border border-current px-4 py-1 rounded-xl"
+                      >
+                        code
+                        <PiArrowUpRight />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
