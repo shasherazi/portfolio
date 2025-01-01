@@ -112,6 +112,16 @@ export default function Home() {
                 University of the People <PiArrowUpRight className="inline" />
               </a>
             </span>
+            , and an electronics student at{" "}
+            <span className="font-bold whitespace-nowrap">
+              <a
+                href="http://gcu.edu.pk/"
+                target="_blank"
+                className="bg-[#800000] hover:text-white px-1"
+              >
+                Government College University Lahore <PiArrowUpRight className="inline" />
+              </a>
+            </span>
             . im also an alumni of{" "}
             <span className="font-bold whitespace-nowrap">
               <a
