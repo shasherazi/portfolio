@@ -112,7 +112,9 @@ export default function Home() {
                 University of the People <PiArrowUpRight className="inline" />
               </a>
             </span>
-            , and an electronics student at{" "}
+            , and an{" "}
+            <span className="font-bold">electronics</span>{" "}
+            student at{" "}
             <span className="font-bold whitespace-nowrap">
               <a
                 href="http://gcu.edu.pk/"
