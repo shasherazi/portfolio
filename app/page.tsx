@@ -3,7 +3,6 @@ import "./App.css";
 import { abrilFatface } from "./fonts";
 import { PiArrowUpRight } from "react-icons/pi";
 import { useState, useEffect } from "react";
-import WorkSection from "./Work";
 import works from "./data/work"
 
 export default function Home() {
@@ -148,20 +147,20 @@ export default function Home() {
               >
                 <div className="h-full flex flex-col pb-24">
                   <div className="mb-6">
-                    <h2 className="text-4xl font-bold mb-8">{work.name}</h2>
-                    <p className="text-xl max-w-xl">{work.description}</p>
+                    <h2 className="text-4xl max-sm:text-2xl font-bold mb-8">{work.name}</h2>
+                    <p className="text-xl max-sm:text-base max-w-xl">{work.description}</p>
                   </div>
-                  <div className="tech flex gap-2">
+                  <div className="tech flex flex-wrap gap-2">
                     {work.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="text-sm border border-accent px-4 py-1 rounded-md"
+                        className="text-sm max-sm:text-xs border border-accent px-4 py-1 rounded-md"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-2 text-xl mt-6">
+                  <div className="flex gap-2 text-xl max-sm:text-base mt-6">
                     {work.links.live && (
                       <a
                         href={work.links.live}
