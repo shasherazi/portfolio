@@ -10,8 +10,10 @@ export default function Home() {
   const [previousSection, setPreviousSection] = useState("");
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
+    const scrollContainer = document.querySelector(".after-main");
+
+    const handleScroll = (e: Event) => {
+      const scrollPosition = (e.target as HTMLElement).scrollTop;
       const sections: NodeListOf<HTMLDivElement> =
         document.querySelectorAll("div[id]");
       sections.forEach((section) => {
@@ -27,8 +29,8 @@ export default function Home() {
       });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    scrollContainer?.addEventListener("scroll", handleScroll);
+    return () => scrollContainer?.removeEventListener("scroll", handleScroll);
   }, [currentSection]);
 
   return (
