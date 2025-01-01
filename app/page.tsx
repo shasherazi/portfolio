@@ -1,9 +1,11 @@
 "use client";
+import React from "react";
 import "./App.css";
 import { abrilFatface } from "./fonts";
 import { PiArrowUpRight } from "react-icons/pi";
 import { useState, useEffect } from "react";
 import works from "./data/work"
+import { fontdiner_swanky } from "./utils/fonts";
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState("intro");
@@ -141,7 +143,7 @@ export default function Home() {
           className="h-screen snap-start snap-always flex-shrink-0"
           id="work"
         >
-          <div className="flex flex-nowrap w-full h-full overflow-x-auto snap-x snap-mandatory">
+          <div className="no-scrollbar flex flex-nowrap w-full h-full overflow-x-auto snap-x snap-mandatory">
             {works.map((work) => (
               <div
                 key={work.id}
@@ -149,8 +151,23 @@ export default function Home() {
               >
                 <div className="h-full flex flex-col pb-24">
                   <div className="mb-6">
-                    <h2 className="text-4xl max-sm:text-2xl font-bold mb-8">{work.name}</h2>
-                    <p className="text-xl max-sm:text-base max-w-xl">{work.description}</p>
+                    <h2
+                      className={`text-4xl max-sm:text-2xl font-bold mb-8 ${work.name === "BalloonGame" ? `text-[#5CB338] ${fontdiner_swanky.className}` : ""}`}
+                    >
+                      {work.name}
+                    </h2>
+                    <p className="text-xl max-sm:text-base max-w-xl">
+                      {work.description.split("BalloonGame").map((part, index, arr) => (
+                        <React.Fragment key={index}>
+                          {part}
+                          {index < arr.length - 1 && (
+                            <span className={`text-[#5CB338] ${fontdiner_swanky.className}`}>
+                              BalloonGame
+                            </span>
+                          )}
+                        </React.Fragment>
+                      ))}
+                    </p>
                   </div>
                   <div className="tech flex flex-wrap gap-2">
                     {work.technologies.map((tech) => (
@@ -235,6 +252,6 @@ export default function Home() {
           </ul>
         </div>
       </div>
-    </main>
+    </main >
   );
 }
