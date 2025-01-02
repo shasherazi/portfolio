@@ -4,8 +4,10 @@ import "./App.css";
 import { abrilFatface } from "./fonts";
 import { PiArrowUpRight } from "react-icons/pi";
 import { useState, useEffect } from "react";
-import works from "./data/work"
+import works from "./data/work";
 import { fontdiner_swanky } from "./utils/fonts";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState("intro");
@@ -46,8 +48,8 @@ export default function Home() {
                 currentSection === "intro"
                   ? "underline-in"
                   : previousSection === "intro"
-                    ? "underline-out"
-                    : ""
+                  ? "underline-out"
+                  : ""
               }
             >
               about
@@ -60,8 +62,8 @@ export default function Home() {
                 currentSection === "work"
                   ? "underline-in"
                   : previousSection === "work"
-                    ? "underline-out"
-                    : ""
+                  ? "underline-out"
+                  : ""
               }
             >
               work
@@ -74,8 +76,8 @@ export default function Home() {
                 currentSection === "contact"
                   ? "underline-in"
                   : previousSection === "contact"
-                    ? "underline-out"
-                    : ""
+                  ? "underline-out"
+                  : ""
               }
             >
               contact
@@ -112,16 +114,15 @@ export default function Home() {
                 University of the People <PiArrowUpRight className="inline" />
               </a>
             </span>
-            , and an{" "}
-            <span className="font-bold">electronics</span>{" "}
-            student at{" "}
+            , and an <span className="font-bold">electronics</span> student at{" "}
             <span className="font-bold whitespace-nowrap">
               <a
                 href="http://gcu.edu.pk/"
                 target="_blank"
                 className="bg-[#800000] hover:text-white px-1"
               >
-                Government College University Lahore <PiArrowUpRight className="inline" />
+                Government College University Lahore{" "}
+                <PiArrowUpRight className="inline" />
               </a>
             </span>
             . im also an alumni of{" "}
@@ -152,33 +153,52 @@ export default function Home() {
         </div> */}
 
         <div
-          className="h-screen snap-start snap-always flex-shrink-0"
+          className="h-screen pb-8 snap-start snap-always flex-shrink-0"
           id="work"
         >
           <div className="no-scrollbar flex flex-nowrap w-full h-full overflow-x-auto snap-x snap-mandatory">
             {works.map((work) => (
               <div
                 key={work.id}
-                className="relative flex-shrink-0 w-screen h-screen snap-center px-20 max-sm:px-10 pt-28"
+                className="relative flex items-center lg:items-start gap-4 flex-shrink-0 w-screen h-screen snap-center px-20 max-sm:px-10 pt-28"
               >
                 <div className="h-full flex flex-col pb-24">
                   <div className="mb-6">
                     <h2
-                      className={`text-4xl max-sm:text-2xl font-bold mb-8 ${work.name === "BalloonGame" ? `text-[#5CB338] ${fontdiner_swanky.className}` : ""}`}
+                      className={`text-4xl max-sm:text-2xl font-bold mb-8 ${
+                        work.name === "BalloonGame"
+                          ? `text-[#5CB338] ${fontdiner_swanky.className}`
+                          : ""
+                      }`}
                     >
                       {work.name}
                     </h2>
+                    <div className="pb-4 block md:hidden w-full">
+                      <Link href={work.links.live || "#"} passHref>
+                        <Image
+                          src={work.image}
+                          alt={work.name}
+                          width={1200}
+                          height={630}
+                          className="rounded-xl cursor-pointer"
+                        />
+                      </Link>
+                    </div>
                     <p className="text-xl max-sm:text-base max-w-xl">
-                      {work.description.split("BalloonGame").map((part, index, arr) => (
-                        <React.Fragment key={index}>
-                          {part}
-                          {index < arr.length - 1 && (
-                            <span className={`text-[#5CB338] ${fontdiner_swanky.className}`}>
-                              BalloonGame
-                            </span>
-                          )}
-                        </React.Fragment>
-                      ))}
+                      {work.description
+                        .split("BalloonGame")
+                        .map((part, index, arr) => (
+                          <React.Fragment key={index}>
+                            {part}
+                            {index < arr.length - 1 && (
+                              <span
+                                className={`text-[#5CB338] ${fontdiner_swanky.className}`}
+                              >
+                                BalloonGame
+                              </span>
+                            )}
+                          </React.Fragment>
+                        ))}
                     </p>
                   </div>
                   <div className="tech flex flex-wrap gap-2">
@@ -193,32 +213,44 @@ export default function Home() {
                   </div>
                   <div className="flex gap-2 text-xl max-sm:text-base mt-6">
                     {work.links.live && (
-                      <a
+                      <Link
                         href={work.links.live}
+                        passHref
                         target="_blank"
                         className="hover:underline flex items-center gap-1 border border-current px-4 py-1 rounded-xl"
                       >
                         visit
                         <PiArrowUpRight />
-                      </a>
+                      </Link>
                     )}
                     {work.links.github && (
-                      <a
+                      <Link
                         href={work.links.github}
+                        passHref
                         target="_blank"
                         className="hover:underline flex items-center gap-1 border border-current px-4 py-1 rounded-xl"
                       >
                         code
                         <PiArrowUpRight />
-                      </a>
+                      </Link>
                     )}
                   </div>
+                </div>
+                <div className="pt-0 lg:pt-8 hidden md:block w-full">
+                  <Link href={work.links.live || "#"} passHref>
+                    <Image
+                      src={work.image}
+                      alt={work.name}
+                      width={1200}
+                      height={630}
+                      className="rounded-xl cursor-pointer"
+                    />
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
         </div>
-
         <div
           className="contact h-screen px-20 max-sm:px-10 pt-24 snap-start snap-always flex-shrink-0"
           id="contact"
@@ -264,6 +296,6 @@ export default function Home() {
           </ul>
         </div>
       </div>
-    </main >
+    </main>
   );
 }

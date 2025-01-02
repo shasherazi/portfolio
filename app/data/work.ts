@@ -1,4 +1,4 @@
-export default [
+const works = [
   {
     id: 1,
     name: "BalloonGame",
@@ -7,7 +7,8 @@ export default [
     links: {
       live: "https://balloongame.vercel.app/",
       github: "https://github.com/shasherazi/balloongame"
-    }
+    },
+    image: "/balloongame.webp"
   },
   {
     id: 2,
@@ -17,6 +18,9 @@ export default [
     links: {
       live: "https://www.nohaarchive.com/",
       github: "https://github.com/shasherazi/nohaarchive"
-    }
+    },
+    image: "/nohaarchive.png"
   },
 ]
+
+export default works;
