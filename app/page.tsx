@@ -153,7 +153,7 @@ export default function Home() {
         </div> */}
 
         <div
-          className="h-screen pb-8 snap-start snap-always flex-shrink-0"
+          className="h-screen snap-start snap-always flex-shrink-0"
           id="work"
         >
           <div className="no-scrollbar flex flex-nowrap w-full h-full overflow-x-auto snap-x snap-mandatory">
@@ -211,7 +211,7 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-2 text-xl max-sm:text-base mt-6">
+                  <div className="flex gap-2 pb-8 text-xl max-sm:text-base mt-6">
                     {work.links.live && (
                       <Link
                         href={work.links.live}
