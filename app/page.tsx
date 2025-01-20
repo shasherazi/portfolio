@@ -2,16 +2,21 @@
 import React from "react";
 import "./App.css";
 import { abrilFatface } from "./fonts";
-import { PiArrowUpRight } from "react-icons/pi";
+import { FaCircleArrowRight, FaCircleArrowLeft } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import works from "./data/work";
 import { fontdiner_swanky } from "./utils/fonts";
 import Image from "next/image";
 import Link from "next/link";
+import ContactSection from "./components/sections/ContactSection";
+import IntroSection from "./components/sections/IntroSection";
+import WorkCard from "./components/sections/work/WorkCard";
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState("intro");
   const [previousSection, setPreviousSection] = useState("");
+  const [currentWorkIndex, setCurrentWorkIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
 
   useEffect(() => {
     const scrollContainer = document.querySelector(".after-main");
@@ -37,6 +42,57 @@ export default function Home() {
     return () => scrollContainer?.removeEventListener("scroll", handleScroll);
   }, [currentSection]);
 
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, []);
+
+  useEffect(() => {
+    scrollToWork(currentWorkIndex);
+  }, [currentWorkIndex]);
+
+  const handleTouchStart = (e: TouchEvent) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: TouchEvent) => {
+    const touchEnd = e.changedTouches[0].clientX;
+    const diff = touchStart - touchEnd;
+
+    if (Math.abs(diff) > 50) {
+      // minimum swipe distance
+      if (diff > 0) {
+        setCurrentWorkIndex((prev) => Math.min(works.length - 1, prev + 1));
+      } else {
+        setCurrentWorkIndex((prev) => Math.max(0, prev - 1));
+      }
+    }
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    e.preventDefault();
+  };
+
+  const scrollToWork = (index: number) => {
+    const container = document.querySelector(".no-scrollbar");
+    const items = container?.querySelectorAll(".snap-center");
+    if (container && items && items[index]) {
+      container.scrollTo({
+        left: (items[index] as HTMLElement).offsetLeft,
+        behavior: "smooth",
+      });
+      setCurrentWorkIndex(index);
+    }
+  };
+
+  const handleKeyPress = (e: KeyboardEvent) => {
+    if (e.key === "ArrowLeft") {
+      setCurrentWorkIndex((prev) => Math.max(0, prev - 1));
+    } else if (e.key === "ArrowRight") {
+      setCurrentWorkIndex((prev) => Math.min(works.length - 1, prev + 1));
+    }
+  };
+
   return (
     <main className="relative min-h-screen overflow-x-hidden">
       <nav className="fixed top-0 left-0 right-0 text-2xl max-sm:text-xl bg-background py-4 pr-8 z-50">
@@ -48,8 +104,8 @@ export default function Home() {
                 currentSection === "intro"
                   ? "underline-in"
                   : previousSection === "intro"
-                  ? "underline-out"
-                  : ""
+                    ? "underline-out"
+                    : ""
               }
             >
               about
@@ -62,8 +118,8 @@ export default function Home() {
                 currentSection === "work"
                   ? "underline-in"
                   : previousSection === "work"
-                  ? "underline-out"
-                  : ""
+                    ? "underline-out"
+                    : ""
               }
             >
               work
@@ -76,8 +132,8 @@ export default function Home() {
                 currentSection === "contact"
                   ? "underline-in"
                   : previousSection === "contact"
-                  ? "underline-out"
-                  : ""
+                    ? "underline-out"
+                    : ""
               }
             >
               contact
@@ -91,52 +147,7 @@ export default function Home() {
           className="intro h-screen px-20 max-sm:px-10 pt-24 snap-start snap-always flex-shrink-0"
           id="intro"
         >
-          <h1 className="text-3xl max-sm:text-2xl">
-            hi, im <br />
-            <span className="font-bold">Syed Hassan Askri</span>
-          </h1>
-          <p className="text-xl max-sm:text-base pt-8">
-            i am a full-stack developer experienced in javascript, react, ruby
-            on rails, and linux. open to new opportunities. i am a also a design
-            enthusiast and love to work with tools like figma, krita, and
-            blender. i am also a linux user and love to work with tools like
-            neovim, tmux, and zsh.
-          </p>
-          <p className="text-xl max-sm:text-base pt-8">
-            im currently a <span className="font-bold">computer science</span>{" "}
-            student at{" "}
-            <span className="font-bold whitespace-nowrap">
-              <a
-                href="https://www.uopeople.edu/"
-                target="_blank"
-                className="bg-[#4D3660] hover:text-white px-1"
-              >
-                University of the People <PiArrowUpRight className="inline" />
-              </a>
-            </span>
-            , and an <span className="font-bold">electronics</span> student at{" "}
-            <span className="font-bold whitespace-nowrap">
-              <a
-                href="http://gcu.edu.pk/"
-                target="_blank"
-                className="bg-[#800000] hover:text-white px-1"
-              >
-                Government College University Lahore{" "}
-                <PiArrowUpRight className="inline" />
-              </a>
-            </span>
-            . im also an alumni of{" "}
-            <span className="font-bold whitespace-nowrap">
-              <a
-                href="https://www.microverse.org/"
-                target="_blank"
-                className="bg-[#743CFF] hover:text-white px-1"
-              >
-                microverse <PiArrowUpRight className="inline" />
-              </a>
-            </span>
-            , a global school for remote software developers.
-          </p>
+          <IntroSection />
         </div>
 
         {/* bad mein krty */}
@@ -153,147 +164,49 @@ export default function Home() {
         </div> */}
 
         <div
-          className="h-screen snap-start snap-always flex-shrink-0"
+          className="h-screen snap-start snap-always flex-shrink-0 relative"
           id="work"
         >
-          <div className="no-scrollbar flex flex-nowrap w-full h-full overflow-x-auto snap-x snap-mandatory">
+          <div
+            className="no-scrollbar flex flex-nowrap w-full h-full overflow-x-auto snap-x snap-mandatory"
+            onTouchStart={(e) => handleTouchStart(e as unknown as TouchEvent)}
+            onTouchEnd={(e) => handleTouchEnd(e as unknown as TouchEvent)}
+            onTouchMove={(e) => handleTouchMove(e as unknown as TouchEvent)}
+          >
             {works.map((work) => (
-              <div
-                key={work.id}
-                className="relative flex items-center lg:items-start gap-4 flex-shrink-0 w-screen h-screen snap-center px-20 max-sm:px-10 pt-28"
-              >
-                <div className="h-full flex flex-col pb-24">
-                  <div className="mb-6">
-                    <h2
-                      className={`text-4xl max-sm:text-2xl font-bold mb-8 ${
-                        work.name === "BalloonGame"
-                          ? `text-[#5CB338] ${fontdiner_swanky.className}`
-                          : ""
-                      }`}
-                    >
-                      {work.name}
-                    </h2>
-                    <div className="pb-4 block md:hidden w-full">
-                      <Link href={work.links.live || "#"} passHref>
-                        <Image
-                          src={work.image}
-                          alt={work.name}
-                          width={1200}
-                          height={630}
-                          className="rounded-xl cursor-pointer"
-                        />
-                      </Link>
-                    </div>
-                    <p className="text-xl max-sm:text-base max-w-xl">
-                      {work.description
-                        .split("BalloonGame")
-                        .map((part, index, arr) => (
-                          <React.Fragment key={index}>
-                            {part}
-                            {index < arr.length - 1 && (
-                              <span
-                                className={`text-[#5CB338] ${fontdiner_swanky.className}`}
-                              >
-                                BalloonGame
-                              </span>
-                            )}
-                          </React.Fragment>
-                        ))}
-                    </p>
-                  </div>
-                  <div className="tech flex flex-wrap gap-2">
-                    {work.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-sm max-sm:text-xs border border-accent px-4 py-1 rounded-md"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex gap-2 pb-8 text-xl max-sm:text-base mt-6">
-                    {work.links.live && (
-                      <Link
-                        href={work.links.live}
-                        passHref
-                        target="_blank"
-                        className="hover:underline flex items-center gap-1 border border-current px-4 py-1 rounded-xl"
-                      >
-                        visit
-                        <PiArrowUpRight />
-                      </Link>
-                    )}
-                    {work.links.github && (
-                      <Link
-                        href={work.links.github}
-                        passHref
-                        target="_blank"
-                        className="hover:underline flex items-center gap-1 border border-current px-4 py-1 rounded-xl"
-                      >
-                        code
-                        <PiArrowUpRight />
-                      </Link>
-                    )}
-                  </div>
-                </div>
-                <div className="pt-0 lg:pt-8 hidden md:block w-full">
-                  <Link href={work.links.live || "#"} passHref>
-                    <Image
-                      src={work.image}
-                      alt={work.name}
-                      width={1200}
-                      height={630}
-                      className="rounded-xl cursor-pointer"
-                    />
-                  </Link>
-                </div>
-              </div>
+              <WorkCard work={work} key={work.id} />
             ))}
           </div>
+          {currentWorkIndex > 0 && (
+            <button
+              onClick={() => setCurrentWorkIndex((prev) => prev - 1)}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background p-2 rounded-full z-10"
+              aria-label="Previous work"
+            >
+              <FaCircleArrowLeft className="max-md:text-2xl text-4xl" />
+            </button>
+          )}
+
+          {currentWorkIndex < works.length - 1 && (
+            <button
+              onClick={() =>
+                setCurrentWorkIndex((prev) =>
+                  Math.min(works.length - 1, prev + 1),
+                )
+              }
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background p-2 rounded-full z-10"
+              aria-label="Next work"
+            >
+              <FaCircleArrowRight className="max-md:text-2xl text-4xl" />
+            </button>
+          )}
         </div>
+
         <div
           className="contact h-screen px-20 max-sm:px-10 pt-24 snap-start snap-always flex-shrink-0"
           id="contact"
         >
-          <h1 className="text-3xl max-sm:text-2xl">you can find me on</h1>
-          <ul className="flex flex-col gap-4 pt-8 text-xl max-sm:text-base pl-4 [&_a]:p-1">
-            <li>
-              <a
-                href="https://github.com/shasherazi"
-                target="_blank"
-                className="bg-[#2B3137] text-[#FAFBFC]"
-              >
-                github <PiArrowUpRight className="inline text-2xl" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/shasherazi"
-                target="_blank"
-                className="bg-[#0876B3] text-white"
-              >
-                linkedin <PiArrowUpRight className="inline text-2xl" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://instagram.com/shasherazi"
-                target="_blank"
-                className="bg-[#ffe299] text-[#1d3ee2]"
-              >
-                instagram <PiArrowUpRight className="inline text-2xl" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="mailto:hassanrandomz@gmail.com"
-                target="_blank"
-                className="bg-[#C71610] text-white"
-              >
-                email <PiArrowUpRight className="inline text-2xl" />
-              </a>
-            </li>
-          </ul>
+          <ContactSection />
         </div>
       </div>
     </main>

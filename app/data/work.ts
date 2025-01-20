@@ -1,4 +1,6 @@
-const works = [
+import { Work } from "../../types";
+
+const works: Work[] = [
   {
     id: 1,
     name: "BalloonGame",
