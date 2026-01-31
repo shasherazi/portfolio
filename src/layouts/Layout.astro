@@ -1,0 +1,30 @@
+---
+import "../styles/globals.css";
+
+const { title = "shasherazi's portfolio" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-[#282828] min-h-screen text-[#fbf1c7] font-sans">
+    <!-- maybe a fade gradient merging with the body -->
+    <nav class="bg-[#1d2021] p-4 mb-8 flex items-center justify-end-safe pr-16">
+      <ul>
+        <li class="underline hover:italic hover:decoration-[#fe8019]">
+          <a href="#">home</a>
+        </li>
+      </ul>
+    </nav>
+    <div>
+      <slot />
+    </div>
+  </body>
+</html>
