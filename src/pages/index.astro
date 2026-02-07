@@ -1,10 +1,122 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import WavySeparator from "../components/WavySeparator.astro";
 ---
 
 <Layout>
-  <h1>hi</h1>
+  <main class="px-64 max-lg:px-32 max-md:px-24 max-sm:px-8 flex flex-col gap-5">
+    <div class="intro">
+      <p class="mb-2">hi, im</p>
+      <h1 class="text-4xl max-md:text-3xl font-semibold text-accent">
+        shasherazi
+      </h1>
+      <p class="mt-2">
+        i am a programmer who likes to tinker with computers, both hardware-wise
+        and software-wise. i also have an interest in design, math, linux, and
+        electronics. this website acts as my personal blog and a "professional"
+        portfolio, depending on how you look at it
+      </p>
+    </div>
+
+    <WavySeparator />
+
+    <div class="projects">
+      some of my projects:
+      <ul class="list-disc list-inside pl-4 marker:text-accent">
+        <li>
+          <a
+            href="https://github.com/shasherazi/dotfiles"
+            target="_blank"
+            class="underline hover:decoration-accent hover:italic"
+            >my dotfiles</a
+          >
+          <span class="text-fg-muted"
+            >(currently using nixos with hyprland)</span
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/shasherazi/wpm-nvim"
+            target="_blank"
+            class="underline hover:decoration-accent hover:italic">wpm-nvim</a
+          >
+          <span class="text-fg-muted"
+            >(neovim plugin that shows your current words-per-minute while
+            typing)</span
+          >
+        </li>
+        <li>
+          <a
+            href="https://yt-vid-sharer.vercel.app/"
+            target="_blank"
+            class="underline hover:decoration-accent hover:italic"
+            >yt-vid-sharer</a
+          >
+          <span class="text-fg-muted"
+            >(share youtube videos as a prettified image)</span
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/shasherazi/movieSubs"
+            target="_blank"
+            class="underline hover:decoration-accent hover:italic">movieSubs</a
+          >
+          <span class="text-fg-muted"
+            >(app to read subtitles while watching movies in the cinema)</span
+          >
+        </li>
+        <li>
+          <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/brainrotify/"
+            target="_blank"
+            class="underline hover:decoration-accent hover:italic"
+            >brainrotify</a
+          >
+          <span class="text-fg-muted"
+            >(firefox extension to add fun words to your page)</span
+          >
+        </li>
+      </ul>
+    </div>
+
+    <WavySeparator />
+
+    <div class="contact">
+      im on
+      <ul class="list-disc list-inside pl-4 marker:text-accent">
+        <li>
+          <a
+            href="https://twitter.com/shasherazi"
+            target="_blank"
+            class="underline hover:decoration-accent hover:italic">twitter</a
+          >
+          <span class="text-fg-muted">(im not calling it X)</span>
+        </li>
+        <li>
+          <a
+            href="https://github.com/shasherazi"
+            target="_blank"
+            class="underline hover:decoration-accent hover:italic">github</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://linkedin.com/in/shasherazi"
+            target="_blank"
+            class="underline hover:decoration-accent hover:italic">linkedin</a
+          >
+          <span class="text-fg-muted"
+            >(outdated. not an accurate representation of me)</span
+          >
+        </li>
+        <li>
+          <!-- prettier-ignore -->
+          <p class="hover:underline hover:decoration-accent hover:italic inline">
+            shasherazi</p>
+          <span class="text-fg-muted">(discord)</span>
+        </li>
+      </ul>
+    </div>
+  </main>
 </Layout>

@@ -1,0 +1,24 @@
+<div class="squiggle w-screen"></div>
+
+<style>
+  .squiggle {
+    height: 30px;
+
+    background-image: url("../assets/squiggle.svg");
+    background-repeat: repeat-x;
+    /* size-x must be 2.5x the size-y for it to look right */
+    background-size: 75px 30px;
+
+    animation: scroll 6.7s linear infinite;
+  }
+
+  @keyframes scroll {
+    from {
+      background-position-x: 0;
+    }
+    to {
+      /* this should be the same as sizex */
+      background-position-x: 75px;
+    }
+  }
+</style>

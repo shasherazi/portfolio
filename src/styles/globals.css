@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+  --font-nabla: "Nabla", sans-serif;
+
+  --color-fg: #ebdbb2;
+  --color-fg-muted: #a89984;
+  --color-bg: #282828;
+  --color-bg-dark: #1d2021;
+  --color-accent: #fe8019;
+}

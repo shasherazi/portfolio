@@ -1,5 +1,6 @@
 ---
 import "../styles/globals.css";
+import Head from "../components/Head.astro";
 
 const { title = "shasherazi's portfolio" } = Astro.props;
 ---
@@ -7,19 +8,17 @@ const { title = "shasherazi's portfolio" } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <Head title={title} />
   </head>
-  <body class="bg-[#282828] min-h-screen text-[#fbf1c7] font-sans">
-    <!-- maybe a fade gradient merging with the body -->
-    <nav class="bg-[#1d2021] p-4 mb-8 flex items-center justify-end-safe pr-16">
-      <ul>
-        <li class="underline hover:italic hover:decoration-[#fe8019]">
+  <body class="bg-bg min-h-screen text-fg overflow-x-hidden">
+    <!-- TODO: maybe a fade gradient merging with the body -->
+    <nav class="py-6 mb-8 flex items-center justify-end-safe pr-10">
+      <ul class="flex gap-6">
+        <li class="underline hover:italic hover:decoration-accent">
           <a href="#">home</a>
+        </li>
+        <li class="underline hover:italic hover:decoration-accent">
+          <a href="#">blog</a>
         </li>
       </ul>
     </nav>
@@ -28,3 +27,9 @@ const { title = "shasherazi's portfolio" } = Astro.props;
     </div>
   </body>
 </html>
+
+<style>
+  body {
+    font-family: var(--font-jetbrains-mono);
+  }
+</style>`
