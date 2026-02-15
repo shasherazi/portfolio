@@ -9,3 +9,42 @@
   --color-bg-dark: #1d2021;
   --color-accent: #fe8019;
 }
+
+.markdown-content {
+  h2 {
+    @apply text-3xl max-md:text-2xl font-semibold text-accent mt-8;
+  }
+  h3 {
+    @apply text-2xl max-md:text-xl font-semibold text-accent mt-8;
+  }
+  h4 {
+    @apply text-xl max-md:text-lg font-semibold text-accent mt-8;
+  }
+  a {
+    @apply underline hover:italic hover:decoration-accent;
+  }
+  code {
+    @apply bg-bg-dark text-fg-muted px-1 rounded;
+  }
+  pre {
+    @apply p-4;
+  }
+  pre code {
+    @apply bg-inherit;
+  }
+  ul {
+    @apply list-disc list-inside pl-4 marker:text-accent;
+  }
+  ol {
+    @apply list-decimal list-inside pl-4 marker:text-accent;
+  }
+  table {
+    @apply w-full border-collapse block overflow-x-auto;
+  }
+  th {
+    @apply border-b-2 border-fg-muted text-left p-2 font-normal;
+  }
+  td {
+    @apply border-b border-fg-muted p-2 font-normal;
+  }
+}

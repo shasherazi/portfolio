@@ -3,13 +3,16 @@ import "../styles/globals.css";
 import Head from "../components/Head.astro";
 import Navbar from "../components/Navbar.astro";
 
-const { title = "shasherazi's portfolio" } = Astro.props;
+const { title, description, startDate, author } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <Head title={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <meta name="date" content={startDate} />
   </head>
   <body class="bg-bg min-h-screen text-fg overflow-x-hidden pb-8">
     <Navbar />

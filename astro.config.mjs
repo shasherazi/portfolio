@@ -10,6 +10,12 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
+  markdown: {
+    shikiConfig: {
+      theme: "gruvbox-dark-hard",
+    },
+  },
+
   experimental: {
     fonts: [
       {
@@ -32,3 +38,4 @@ export default defineConfig({
 
   integrations: [mdx()],
 });
+
