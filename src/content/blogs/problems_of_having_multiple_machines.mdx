@@ -1,0 +1,62 @@
+---
+title: Problems of having multiple machines
+author: shasherazi
+description: the configuration management hell im going through trying to manage my two laptops
+startDate: 2026-03-27
+---
+
+i've only had a maximum of one laptop at a time all my life. but that changed
+last year when received a **Lenovo Thinkbook** (hereinafter referred to as
+`shtinkbook`) in addition to the **Lenovo Thinkpad** (hereinafter referred to as
+`shtinkpad`) i already had. for some time i shelved my old `shtinkpad` and made
+`shtinkbook` my main laptop as it had better screen, a backlit keyboard (missing
+in `shtinkpad`), double the storage as `shtinkpad`, and better battery. but the
+idea of having separate machines for coding and funsies was always captivating.
+
+one day i decided not to procrastinate anymore and decided to add a second
+hostname in my `nixos` config and add `shtinkpad` to my active laptops family.
+i decided to make it my games-only laptop.
+
+before moving forward, let me give you a short primer of my gaming history. i
+didnt have a childhood pc or console or anything like that, so i didnt play any
+computer games growing up. instead, i touched grass. but during covid, which was
+around the same time i got my first laptop, i started exploring computer games
+and specially enjoyed minecraft multiplayer with my friends.
+
+even tho it provided a worse gaming experience, `shtinkpad` was enough to
+satisfy my occiassional gaming needs. i played **skyrim**, **mindustry** (solo
+and with a friend), and **minecraft** during this short phase. but leaving my
+better laptop behind to game on an objectively worse laptop was not a pleasant
+feeling. so i decided to do a switcheroo, i.e., making `shtinkpad` my coding
+only laptop and `shtinkbook` my funsies laptop. tho i kept the ssh bridge for
+times i wanted to write code on a better screen. i also decided to switch to
+arch (btw) on my `shtinkpad` coz coding experience on `nixos` had some
+corporate-like requirements that i dont really care for. currently im in this
+phase, the switcheroo.
+
+now here is where my problems start. my current dotfiles directory has been
+built up on years of incremental changes and has faced multiple overwrites. i am
+using the same dotfiles for both the machines, but that has been causing some
+inconsistencies because both my children (laptops) have different hardware. so
+i am thinking of creating either two totally separate dotfiles or a single repo
+but with separate folders for each machine; a monorepo of sorts.
+
+the first approach has the issue of syncing hell. the shared configs and scripts
+will be hard to keep in sync over time. tho i can setup `syncthing` or smth like
+i have for many other things, it just adds a new layer of complexity on an
+already complex system of dotfiles. i might need to rewrite a major part of
+my dotfiles at some point. ughhh, just thinking about it is sending shivers down
+my spine.
+
+the second approach seems more reasonable tho. but it will increase the number
+of irrelevant files on a machine, specially when i add my third machine: an old
+thinkpad (i havent been able to come up with a nickname for it yet). it will
+take some time but i think this is the most suitable approach for having
+multiple machines sensibly confgured.
+
+another thing i want in my setup is the reduction of friction when i switch
+machines. suppose when i am done with my funsies and now it is time for j\*b. i
+dont wanna have to reset my brain to be able to use the new machine. thats why
+i will keep the same window manager and basic programs and utilities across all
+my machines. anyway, ig it was more of a rant than an overview of the problems
+lol.

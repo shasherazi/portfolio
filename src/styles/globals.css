@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+::selection {
+  color: #282828;
+  background: #ebdbb2;
+}
+
 @theme {
   --font-nabla: "Nabla", sans-serif;
 
@@ -19,6 +24,9 @@
   }
   h4 {
     @apply text-xl max-md:text-lg font-semibold text-accent mt-8;
+  }
+  p {
+    @apply indent-10;
   }
   a {
     @apply underline hover:italic hover:decoration-accent;
