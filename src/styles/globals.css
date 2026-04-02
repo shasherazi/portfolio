@@ -25,9 +25,6 @@
   h4 {
     @apply text-xl max-md:text-lg font-semibold text-accent mt-8;
   }
-  p {
-    @apply indent-10;
-  }
   a {
     @apply underline hover:italic hover:decoration-accent;
   }
