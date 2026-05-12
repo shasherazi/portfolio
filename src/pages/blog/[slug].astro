@@ -22,7 +22,7 @@ const date = new Date(post.data.startDate).toLocaleDateString("en-US", {
 ---
 
 <BlogLayout
-  title=`${post.data.title} - shasherazi's blog`
+  title={`${post.data.title} - shasherazi's blog`}
   description={post.data.description}
   startDate={isoDate}
   author={post.data.author}

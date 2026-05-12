@@ -12,7 +12,8 @@ const { title, description, startDate, author } = Astro.props;
     <Head title={title} />
     <meta name="description" content={description} />
     <meta name="author" content={author} />
-    <meta name="date" content={startDate} />
+    <meta property="article:published_time" content={startDate} />
+    <meta property="article:author" content={author} />
   </head>
   <body class="bg-bg min-h-screen text-fg overflow-x-hidden pb-8">
     <Navbar />
